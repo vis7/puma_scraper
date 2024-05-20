@@ -4,7 +4,7 @@ from puma_scraper.items import PumaScraperItem
 class PumaSpider(scrapy.Spider):
     name = "puma"
     allowed_domains = ["in.puma.com"]
-    start_urls = ["https://in.puma.com/in/en/mens/mens-shoes/mens-shoes-sneakers"] # ?offset=648
+    start_urls = ["https://in.puma.com/in/en/mens/mens-shoes/mens-shoes-sneakers?offset=648"]
 
     def parse(self, response):
         response_data = response.css("#product-list-items .text-base.font-bold::text").extract()
